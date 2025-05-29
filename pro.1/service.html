@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services | H2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #333;
+      --accent: #ffd700;
+      --bg: #f4f4f4;
+      --text: #222;
+      --light-text: #555;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--primary);
+      padding: 12px 30px;
+      color: white;
+    }
+
+    .navbar img.logo {
+      height: 45px;
+    }
+
+    .menu-icon {
+      width: 30px;
+      cursor: pointer;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 250px;
+      height: 100%;
+      background-color: var(--primary);
+      padding: 60px 20px;
+      transition: 0.4s;
+      z-index: 999;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 15px 0;
+      border-bottom: 1px solid #444;
+    }
+
+    .sidebar ul li a {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .sidebar .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Page Heading */
+    .page-title {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .page-title h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .services {
+      padding: 30px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin: 15px 0 10px;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--light-text);
+      text-align: justify;
+    }
+
+    @media (max-width: 480px) {
+      .page-title h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <img src="output-onlinepngtools (3).png" alt="Logo" class="logo">
+    <img src="menu.png" class="menu-icon" onclick="toggleSidebar()" alt="Menu">
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="service.html">Our Services</a></li>
+      <li><a href="contacts.html">Contact</a></li>
+      <li><a href="portfolio.html">About</a></li>
+    </ul>
+  </div>
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <h1>Our Services</h1>
+  </div>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="service-grid">
+      <div class="service-card">
+        <img src="scott-graham-5fNmWej4tAA-unsplash.jpg" alt="Training">
+        <h3>Professional Trainings</h3>
+        <p>Enhance your skills with expert-led training sessions tailored to help you grow in your career or business.</p>
+      </div>
+      <div class="service-card">
+        <img src="headway-5QgIuuBxKwM-unsplash.jpg" alt="Digital Services">
+        <h3>Digital Transformation</h3>
+        <p>We help brands go digital with web, mobile and social strategies that drive engagement and results.</p>
+      </div>
+      <div class="service-card">
+        <img src="cytonn-photography-n95VMLxqM2I-unsplash.jpg" alt="Graduation">
+        <h3>Career Mentorship</h3>
+        <p>From graduation to growth, our mentorship program helps students and professionals achieve their goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Toggle JS -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.right = sidebar.style.right === '0px' ? '-260px' : '0px';
+    }
+  </script>
+
+</body>
+</html>
